@@ -28,6 +28,10 @@ public class BDSimulado {
 
 	}
 
+	public ArrayList<ONG> getONG() {
+		return ongs;
+	}
+
 	// Questão 2: Retorna Todas as informações de uma ONG apartir do nome
 	public ONG getInfoONG(String nomeONG) {
 		ONG resultado = null;
@@ -77,6 +81,7 @@ public class BDSimulado {
 		return resultado;
 	}
 
+	// Retorna ONG pelo nome
 	public ONG getONGporNome(String nome) {
 		ONG resultado = null;
 
@@ -87,5 +92,35 @@ public class BDSimulado {
 		}
 		return resultado;
 	}
+
+	// insere postos nas ONGs
+	public void addPostosAONG(String ONG, int codigo, double capacidade, boolean vegetariano, boolean semLuten,
+			boolean semLactose) {
+
+		Posto postos = new Posto(getONGporNome(ONG), codigo, capacidade, vegetariano, semLuten, semLactose);
+
+		for (int i = 0; i < this.ongs.size(); i++) {
+			if (this.ongs.get(i).getNome().equals(ONG)) {
+				this.ongs.get(i).getPostos().add(postos);
+
+			}
+		}
+	}
+
+	// Questão 1| Parte 2: cada pessoa consome 500g de comida
+	public ArrayList<ONG> getBuscaPosto(int QtdPessoas) {
+
+		ArrayList<ONG> resultado = new ArrayList<>();
+		for (int i = 0; i < this.ongs.size(); i++) {
+			for (int j = 0; j < ongs.get(i).getPostos().size(); j++) {
+				if (this.ongs.get(i).postos.get(j).getCapacidade() >= (QtdPessoas * 500)) {
+					resultado.add(this.ongs.get(i));
+				}
+			}
+		}
+		return resultado;
+
+	}
+	// Questão 2 | Parte 2: cada pessoa consome 500g de comida
 
 }
