@@ -5,7 +5,7 @@ public class ONG {
 	private String nome;
 	private String responsavel;
 	private String estado;
-	ArrayList<Posto> postos;
+	private ArrayList<Posto> postos;
 
 	@Override
 	public String toString() {

@@ -1,34 +1,24 @@
 public class Posto {
 
-	private ONG ongs;
 	private int codigo;
 	private double capacidade;
 	private boolean vegetariano;
-	private boolean semLuten;
+	private boolean semGluten;
 	private boolean semLactose;
 
 	@Override
 	public String toString() {
-		return "Posto [ongs=" + ongs + ", codigo=" + codigo + ", capacidade=" + capacidade + ", vegetariano="
-				+ vegetariano + ", semLuten=" + semLuten + ", semLactose=" + semLactose + "]";
+		return "Posto [codigo=" + codigo + ", capacidade=" + capacidade + ", vegetariano=" + vegetariano + ", semLuten="
+				+ semGluten + ", semLactose=" + semLactose + "]";
 	}
 
-	public Posto(ONG ongs, int codigo, double capacidade, boolean vegetariano, boolean semLuten, boolean semLactose) {
+	public Posto(int codigo, double capacidade, boolean vegetariano, boolean semGluten, boolean semLactose) {
 		super();
-		this.ongs = ongs;
 		this.codigo = codigo;
 		this.capacidade = capacidade;
 		this.vegetariano = vegetariano;
-		this.semLuten = semLuten;
+		this.semGluten = semGluten;
 		this.semLactose = semLactose;
-	}
-
-	public ONG getOngs() {
-		return ongs;
-	}
-
-	public void setOngs(ONG ongs) {
-		this.ongs = ongs;
 	}
 
 	public int getCodigo() {
@@ -55,12 +45,12 @@ public class Posto {
 		this.vegetariano = vegetariano;
 	}
 
-	public boolean isSemLuten() {
-		return semLuten;
+	public boolean isSemGluten() {
+		return semGluten;
 	}
 
-	public void setSemLuten(boolean semLuten) {
-		this.semLuten = semLuten;
+	public void setSemGluten(boolean semGluten) {
+		this.semGluten = semGluten;
 	}
 
 	public boolean isSemLactose() {
